@@ -39,3 +39,9 @@
   (product nth-pi-term 2 next (* 2 iteration-count)))
 
 ; If your product procedure generates a recursive process, write one that generates an iterative process. If it generates an iterative process, write one that generates a recursive process.
+(define (new-product term a next b)
+  (define (product-iterator a accumulator)
+    (if (> a b)
+      accumulator
+      (product-iterator (next a) (* accumulator (term a)))))
+  (product-iterator a 1))
