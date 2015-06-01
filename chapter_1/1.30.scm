@@ -18,7 +18,7 @@
 (define (sum term a next b)
   (define (iter a result)
     (if (> a b)
-     result
+      result
       (iter (next a) (+ (term a) result))))
   (iter (term a) 0))
 
