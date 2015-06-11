@@ -13,3 +13,8 @@
 
 ; (f f) evalutates to (f 2).
 ; That, in turn, evaluates to (2 2). This throws an error, since 2 is not a procedure.
+;
+; You could also rewrite f as (define f (lambda (g) (g 2)))
+; (f f) becomes (f (lambda (g) (g 2)))
+; That becomes ((lambda (g) (g 2)) 2), which evaluates to (2 2).
+; This throws an error, since 2 is not a procedure.
