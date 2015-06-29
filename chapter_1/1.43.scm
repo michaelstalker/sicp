@@ -22,4 +22,4 @@
 (define (repeated func count)
   (if (= count 1)
       func
-      (repeated (compose func func) (dec count)))) 
+      (compose func (repeated func (dec count)))))
